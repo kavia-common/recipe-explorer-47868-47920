@@ -8,6 +8,7 @@ import {
 import { RouterHead } from "./components/router-head/router-head";
 
 import "./global.css";
+import "./styles/theme.css";
 
 export default component$(() => {
   /**
@@ -31,7 +32,22 @@ export default component$(() => {
         {!isDev && <ServiceWorkerRegister />}
       </head>
       <body lang="en">
-        <RouterOutlet />
+        <header class="header">
+          <div class="container header-inner">
+            <div class="brand">
+              <span class="brand-badge">Chef</span>
+              Recipe Explorer
+            </div>
+          </div>
+        </header>
+        <main class="main container">
+          <RouterOutlet />
+        </main>
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted">© {new Date().getFullYear()} Recipe Explorer • Ocean Professional Theme</p>
+          </div>
+        </footer>
       </body>
     </QwikCityProvider>
   );

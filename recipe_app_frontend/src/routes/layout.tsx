@@ -11,10 +11,9 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 
 // PUBLIC_INTERFACE
 export default component$(() => {
+  // Keep route-level styles for compatibility; main app shell is in root.tsx
   useStyles$(styles);
   return (
-    <main>
-      <Slot />
-    </main>
+    <Slot />
   );
 });
